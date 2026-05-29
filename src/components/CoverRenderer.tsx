@@ -22,6 +22,7 @@ function getTextStyle(config: TextStyleConfig): CSSProperties {
     letterSpacing: config.letterSpacing === undefined ? undefined : `${config.letterSpacing}px`,
     textAlign: config.textAlign,
     textShadow: config.textShadow,
+    transform: config.transform,
     boxSizing: "border-box",
   };
 }

@@ -17,6 +17,7 @@ export type TextStyleConfig = {
   letterSpacing?: number;
   textAlign?: "left" | "center" | "right";
   textShadow?: string;
+  transform?: string;
   marginTop?: number;
 };
 
