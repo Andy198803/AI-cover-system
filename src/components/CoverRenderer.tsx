@@ -38,12 +38,47 @@ function getTitleBaseFontSize(title: string) {
   return 42;
 }
 
+function getTitleStyleLevel(title: string) {
+  const length = title.trim().length;
+
+  if (length <= 4) return "short";
+  if (length <= 8) return "medium";
+  return "long";
+}
+
+function getTitleVisualStyle(title: string): CSSProperties {
+  const level = getTitleStyleLevel(title);
+
+  if (level === "short") {
+    return {
+      letterSpacing: "4px",
+      WebkitTextStroke: "1.5px rgba(255,220,180,0.55)",
+      textShadow: "0 4px 10px rgba(0,0,0,.35), 0 0 8px rgba(111,9,9,.25)",
+    };
+  }
+
+  if (level === "medium") {
+    return {
+      letterSpacing: "1px",
+      WebkitTextStroke: "1px rgba(255,220,180,0.45)",
+      textShadow: "0 3px 8px rgba(0,0,0,.32)",
+    };
+  }
+
+  return {
+    letterSpacing: "-1px",
+    WebkitTextStroke: "0.5px rgba(255,220,180,0.35)",
+    textShadow: "0 2px 6px rgba(0,0,0,.28)",
+  };
+}
+
 function TextGroup({ data, template }: CoverRendererProps) {
   const { textGroup } = template;
   const titleRef = useRef<HTMLDivElement>(null);
   const descriptionRef = useRef<HTMLDivElement>(null);
   const textGroupWidth = Number.parseFloat(textGroup.width);
   const titleBaseFontSize = getTitleBaseFontSize(data.title);
+  const titleVisualStyle = getTitleVisualStyle(data.title);
   const [titleFontSize, setTitleFontSize] = useState(titleBaseFontSize);
   const [descriptionFontSize, setDescriptionFontSize] = useState(textGroup.description.fontSize);
   const [descriptionWidth, setDescriptionWidth] = useState(0);
@@ -128,7 +163,7 @@ function TextGroup({ data, template }: CoverRendererProps) {
           textOverflow: "ellipsis",
           whiteSpace: "nowrap",
           fontSize: `${titleFontSize}px`,
-          WebkitTextStroke: "1.5px rgba(255,220,180,0.5)",
+          ...titleVisualStyle,
           transform: textGroup.title.transform,
         }}
       >
