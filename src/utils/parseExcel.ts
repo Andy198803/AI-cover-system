@@ -1,4 +1,4 @@
-import readXlsxFile from "read-excel-file/browser";
+import readXlsxFile from "read-excel-file";
 import type { CoverRow } from "../types/cover";
 
 const knownHeaders = {

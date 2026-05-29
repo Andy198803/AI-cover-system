@@ -33,8 +33,9 @@ function App() {
       setSelectedIndex(0);
       setFileName(file.name);
       setError("");
-    } catch {
-      setError("文件解析失败，请上传 .xlsx、.csv 或 .tsv 文件。");
+    } catch (error) {
+      console.error("文件解析失败真实原因：", error);
+      setError("文件解析失败，请打开浏览器控制台查看真实错误。");
     }
   }
 
