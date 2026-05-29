@@ -29,10 +29,11 @@ function getTextStyle(config: TextStyleConfig): CSSProperties {
 function getTitleBaseFontSize(title: string) {
   const length = title.trim().length;
 
-  if (length <= 4) return 88;
-  if (length <= 8) return 74;
-  if (length <= 12) return 62;
-  if (length <= 16) return 52;
+  if (length <= 3) return 68;
+  if (length <= 4) return 74;
+  if (length <= 8) return 68;
+  if (length <= 12) return 58;
+  if (length <= 16) return 50;
   return 42;
 }
 

@@ -3,12 +3,12 @@ import type { CoverTemplateConfig } from "../types/cover";
 export const fontFaces = [
   {
     family: "TitleFont",
-    src: "/fonts/TitleFont.ttf",
-    fallback: "sans-serif",
+    src: "/fonts/思源宋体-Heavy-4.otf",
+    fallback: "serif",
   },
   {
     family: "DescFont",
-    src: "/fonts/DescFont.ttf",
+    src: "/fonts/思源黑体-Bold-6.otf",
     fallback: "sans-serif",
   },
 ] as const;
@@ -27,18 +27,18 @@ export const coverTemplates: Record<string, CoverTemplateConfig> = {
       borderRadius: 12,
     },
     fonts: {
-      title: "TitleFont, sans-serif",
+      title: "TitleFont, serif",
       description: "DescFont, sans-serif",
     },
     textGroup: {
       position: {
         left: "58%",
-        top: "340px",
+        top: "300px",
       },
       rotation: "-6deg",
       width: "380px",
       title: {
-        fontFamily: "TitleFont, sans-serif",
+        fontFamily: "TitleFont, serif",
         fontSize: 88,
         minFontSize: 24,
         fontWeight: 700,
@@ -55,11 +55,11 @@ export const coverTemplates: Record<string, CoverTemplateConfig> = {
         color: "#111",
         lineHeight: 1,
         textAlign: "center",
-        marginTop: 18,
+        marginTop: 14,
       },
       inkLine: {
-        extraWidth: 56,
-        height: 10,
+        extraWidth: 48,
+        height: 7,
         color: "#111",
         opacity: 0.9,
         borderRadius: "999px",
