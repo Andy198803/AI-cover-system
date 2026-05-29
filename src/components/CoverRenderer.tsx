@@ -128,6 +128,8 @@ function TextGroup({ data, template }: CoverRendererProps) {
           textOverflow: "ellipsis",
           whiteSpace: "nowrap",
           fontSize: `${titleFontSize}px`,
+          WebkitTextStroke: "1.5px rgba(255,220,180,0.5)",
+          transform: textGroup.title.transform,
         }}
       >
         {data.title}
